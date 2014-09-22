@@ -47,6 +47,11 @@ app.post('/api/register', function (req, res, next) {
   var user = new User(req.body);
   user.save(function (err) {
     if (err) return next(err);
+    sendMessage({
+      to: user.email,
+      subject: 'Notification enregistrée',
+      text: 'Vous serez notifié dès que l\'iPhone sera disponible dans le store ' + stores[user.store]
+    });
     res.send({error: false});
   });
 });
@@ -62,7 +67,11 @@ function checkAvailabilities() {
         if (user.available === available) return ;
 
         if (available) {
-          sendMessage();
+          sendMessage({
+            text: 'iPhone disponible dans le store ' + stores[user.store],
+            subject: 'iPhone disponible (' + stores[user.store] + ')',
+            to: user.email
+          });
         } else {
           console.log('NO DISPO');
         }
@@ -74,14 +83,14 @@ function checkAvailabilities() {
   });
 }
 
-function sendMessage(user) {
+function sendMessage(options) {
   var message = {
-    text: 'iPhone disponible dans le store ' + stores[user.store],
-    subject: 'iPhone disponible (' + stores[user.store] + ')',
+    text: options.text,
+    subject: options.subject,
     from_email: 'noreply@iphone-notifier.herokuapp.com',
     to: [
       {
-        email: user.email
+        email: options.to
       }
     ]
   };

@@ -65,6 +65,9 @@
         </div>
         <p><button class="btn btn-lg btn-success" role="submit">Get notified</button></p>
       </form>
+
+      <div id="success" style="display:none" class="alert alert-success">Email enregistré, vous serez notifié dès que l'iPhone sera disponible dans l'Apple Store!</div>
+      <div id="error" style="display:none" class="alert alert-danger">Une erreur est survenue, désolé.</div>
       </div>
 
 
@@ -90,10 +93,12 @@
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(data),
         success: function () {
-          console.log('SUCCESS', arguments);
+          form.hide();
+          $('#success').show();
         },
         error: function () {
-          console.log('ERROR', arguments);
+          form.hide();
+          $('#error').show();
         }
       });
       return false;

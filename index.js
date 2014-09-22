@@ -105,6 +105,6 @@ function sendMessage(options) {
   });
 }
 
-checkAvailabilities();
+setInterval(checkAvailabilities, 60000);
 
 app.listen(process.env.PORT || 8080);

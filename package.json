@@ -13,5 +13,12 @@
   "bugs": {
     "url": "https://github.com/neoziro/iphone-notifier/issues"
   },
-  "homepage": "https://github.com/neoziro/iphone-notifier"
+  "homepage": "https://github.com/neoziro/iphone-notifier",
+  "dependencies": {
+    "body-parser": "^1.8.3",
+    "express": "^4.9.4",
+    "mandrill-api": "^1.0.40",
+    "mongoose": "^3.8.16",
+    "request": "^2.44.0"
+  }
 }

@@ -1,0 +1,17 @@
+{
+  "name": "iphone-notifier",
+  "version": "1.0.0",
+  "description": "Notify avalaibility of iPhone by email.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neoziro/iphone-notifier.git"
+  },
+  "author": "Greg Bergé <berge.greg@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neoziro/iphone-notifier/issues"
+  },
+  "homepage": "https://github.com/neoziro/iphone-notifier"
+}

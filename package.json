@@ -1,7 +1,7 @@
 {
   "name": "iphone-notifier",
   "version": "1.0.0",
-  "description": "Notify avalaibility of iPhone by email.",
+  "description": "Get notified of iPhone availability by email.",
   "main": "index.js",
   "scripts": {},
   "repository": {
